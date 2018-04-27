@@ -2,8 +2,10 @@ package UI;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class PanelLateral extends JPanel {
+public class PanelLateral extends JPanel implements ActionListener {
 
     private JButton tour;
     private JButton datosClientes;
@@ -16,6 +18,7 @@ public class PanelLateral extends JPanel {
     public void orden(){
 
         tour = new JButton("Tours");
+        tour.addActionListener(this);
         datosClientes = new JButton("Datos Clientes");
         datosMotos = new JButton("Datos Motos");
         hoteles = new JButton("Hoteles");
@@ -25,5 +28,8 @@ public class PanelLateral extends JPanel {
         add(datosClientes);
         add(datosMotos);
         add(hoteles);
+    }
+    public void actionPerformed(ActionEvent e) {
+        SelectTour selectTour =new SelectTour();
     }
 }

@@ -13,7 +13,7 @@ public class SelectTour extends JFrame {
     private JComboBox tour;
 
     public SelectTour(){
-
+        Orden();
     }
     private void Orden(){
         setLayout(new BorderLayout());
@@ -21,7 +21,6 @@ public class SelectTour extends JFrame {
         setSize(ancho, alto);
         setMinimumSize(getSize());
         setResizable(false);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
     }
 
