@@ -16,7 +16,19 @@ public class SelectTour extends JFrame {
         Orden();
     }
     private void Orden(){
-        setLayout(new BorderLayout());
+
+        tour = new JComboBox();
+        actualizar = new JButton("Actualizar");
+        agregar = new JButton("agregar");
+
+        GridLayout grid =new GridLayout(2,4);
+        setLayout(grid);
+        add(tour);
+        add(new JLabel());
+        add(actualizar);
+        add(agregar);
+
+
         setTitle(titulo);
         setSize(ancho, alto);
         setMinimumSize(getSize());
