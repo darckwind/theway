@@ -7,7 +7,7 @@ public class ActualizarTour extends JDialog {
 
     private int alto=640;
     private int ancho=800;
-    private String titulo;
+    private String titulo = "Configuracion Tours";
     private ATourCentral tourCentral;
     private ATourLateral tourLateral;
 

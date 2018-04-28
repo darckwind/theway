@@ -15,15 +15,23 @@ public class SelectTour extends JDialog  implements ActionListener{
     private JComboBox tour;
 
     public SelectTour(){
+
         Orden();
     }
     private void Orden(){
+        /**
+         * inicializacion botones con eventos
+         */
 
         tour = new JComboBox();
         actualizar = new JButton("Actualizar");
         actualizar.addActionListener(this);
         agregar = new JButton("agregar");
         agregar.addActionListener(this);
+
+        /**
+         * configuracion layout
+         */
 
         GridLayout grid =new GridLayout(2,4);
         setLayout(grid);
@@ -32,6 +40,9 @@ public class SelectTour extends JDialog  implements ActionListener{
         add(actualizar);
         add(agregar);
 
+        /**
+         * configuracion JDialog
+         */
 
         setTitle(titulo);
         setSize(ancho, alto);
@@ -42,6 +53,9 @@ public class SelectTour extends JDialog  implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e) {
+        /**
+         * eventos
+         */
         if(e.getActionCommand()== "Actualizar"){
             setVisible(false);
             ActualizarTour aTour =new ActualizarTour();

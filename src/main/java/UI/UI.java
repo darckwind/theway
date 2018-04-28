@@ -18,6 +18,9 @@ public class UI extends JFrame {
     }
 
     public void orden() {
+        /**
+         * inicializacion componentes
+         */
         pCentral = new PanelCentral();
         pLateral = new PanelLateral();
         setLayout(new BorderLayout());
@@ -26,6 +29,15 @@ public class UI extends JFrame {
 
     }
     public void ventana(){
+        /**
+         * icono
+         */
+        ImageIcon ImageIcon = new ImageIcon("imagenes/imagen.png");
+        Image image = ImageIcon.getImage();
+        this.setIconImage(image);
+        /**
+         * configuracion ventana
+         */
         setTitle(titulo);
         setSize(ancho, alto);
         setMinimumSize(getSize());

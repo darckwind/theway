@@ -20,12 +20,20 @@ public class CreacionTour extends JDialog {
 
     private void Oredn(){
 
+        /**
+         * inicializacion componentes
+         */
+
         id = new JLabel("Id Tour");
         id2 = new JTextField();
         duracion = new JLabel("Duracion");
         duracion2 = new JTextField();
         crear = new JButton("Crear");
         limpiar = new JButton("Limpiar");
+
+        /**
+         * configuracion layout
+         */
 
         GridLayout grid = new GridLayout(3,2);
         setLayout(grid);
@@ -36,6 +44,9 @@ public class CreacionTour extends JDialog {
         add(crear);
         add(limpiar);
 
+        /**coniguracion JDialog
+         *
+         */
         setModal(true);
         setTitle(titulo);
         setSize(ancho, alto);
