@@ -1,11 +1,18 @@
 package UI;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class CreacionTour extends JDialog {
     private int alto = 200;
     private int ancho= 400;
     private String titulo = "Configuracion Tour";
+    private JLabel id;
+    private JTextField id2;
+    private JLabel duracion;
+    private JTextField duracion2;
+    private JButton crear;
+    private JButton limpiar;
 
     public CreacionTour(){
         Oredn();
@@ -13,6 +20,23 @@ public class CreacionTour extends JDialog {
 
     private void Oredn(){
 
+        id = new JLabel("Id Tour");
+        id2 = new JTextField();
+        duracion = new JLabel("Duracion");
+        duracion2 = new JTextField();
+        crear = new JButton("Crear");
+        limpiar = new JButton("Limpiar");
+
+        GridLayout grid = new GridLayout(3,2);
+        setLayout(grid);
+        add(id);
+        add(id2);
+        add(duracion);
+        add(duracion2);
+        add(crear);
+        add(limpiar);
+
+        setModal(true);
         setTitle(titulo);
         setSize(ancho, alto);
         setMinimumSize(getSize());

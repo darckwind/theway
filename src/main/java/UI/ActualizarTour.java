@@ -22,12 +22,13 @@ public class ActualizarTour extends JDialog {
         add(tourCentral, BorderLayout.CENTER);
         add(tourLateral, BorderLayout.WEST);
 
+        setModal(true);
         setTitle(titulo);
         setSize(ancho, alto);
         setMinimumSize(getSize());
         setResizable(false);
         setVisible(true);
-        setModal(true);
+
 
     }
 }

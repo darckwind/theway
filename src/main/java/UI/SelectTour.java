@@ -23,6 +23,7 @@ public class SelectTour extends JDialog  implements ActionListener{
         actualizar = new JButton("Actualizar");
         actualizar.addActionListener(this);
         agregar = new JButton("agregar");
+        agregar.addActionListener(this);
 
         GridLayout grid =new GridLayout(2,4);
         setLayout(grid);
@@ -41,7 +42,15 @@ public class SelectTour extends JDialog  implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e) {
-        ActualizarTour aTour =new ActualizarTour();
+        if(e.getActionCommand()== "Actualizar"){
+            setVisible(false);
+            ActualizarTour aTour =new ActualizarTour();
+        }else{
+            setVisible(false);
+            CreacionTour creacion = new CreacionTour();
+
+        }
+
     }
 
 }
