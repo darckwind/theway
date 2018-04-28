@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class SelectTour extends JFrame  implements ActionListener{
+public class SelectTour extends JDialog  implements ActionListener{
 
     private int alto=200;
     private int ancho=400;
@@ -36,6 +36,7 @@ public class SelectTour extends JFrame  implements ActionListener{
         setSize(ancho, alto);
         setMinimumSize(getSize());
         setResizable(false);
+        setModal(true);
         setVisible(true);
     }
 

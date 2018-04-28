@@ -3,7 +3,7 @@ package UI;
 import javax.swing.*;
 import java.awt.*;
 
-public class ActualizarTour extends JFrame {
+public class ActualizarTour extends JDialog {
 
     private int alto=640;
     private int ancho=800;
@@ -27,6 +27,7 @@ public class ActualizarTour extends JFrame {
         setMinimumSize(getSize());
         setResizable(false);
         setVisible(true);
+        setModal(true);
 
     }
 }
