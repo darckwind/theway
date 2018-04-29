@@ -15,6 +15,7 @@ public class UI extends JFrame {
     public UI() {
         orden();
         ventana();
+        ISecion inicio =new ISecion();
     }
 
     public void orden() {
