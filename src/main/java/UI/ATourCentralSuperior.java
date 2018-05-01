@@ -10,7 +10,7 @@ public class ATourCentralSuperior extends JPanel {
     private JLabel cordenadaLLegada;
     private JTextField cordenadaLLegada2;
     private JLabel hotel;
-    private JTextField hotel2;
+    private JComboBox hotel2;
 
 
 
@@ -24,7 +24,7 @@ public class ATourCentralSuperior extends JPanel {
         cordenadaLLegada = new JLabel("Cordenada de LLegada");
         cordenadaLLegada2 = new JTextField();
         hotel = new JLabel("hoteles");
-        hotel2 = new JTextField();
+        hotel2 = new JComboBox();
 
         GridLayout grid = new GridLayout(3,2);
         setLayout(grid);
