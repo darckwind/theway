@@ -11,6 +11,8 @@ public class ActualizarTour extends JDialog {
     private ATourCentral tourCentral;
     private ATourLateral tourLateral;
 
+
+
     public ActualizarTour(){
         Orden();
 

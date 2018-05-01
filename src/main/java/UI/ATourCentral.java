@@ -1,20 +1,26 @@
 package UI;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class ATourCentral extends JPanel {
 
-    private JLabel cordenadaSalida;
-    private JTextField cordenadaSalida2;
-    private JLabel cordenadaLLegada;
-    private JTextField cordenadaLLegada2;
-    private JLabel hotel;
-    private JTextField hotel2;
-    private JLabel lore;
-    private JTextField lore2;
+    private ATourCentralSuperior superior;
+    private ATourCentralinferior inferior;
 
-
-    public ATourCentral() {
+    public ATourCentral(){
+        Orden();
     }
 
+    public void Orden(){
+
+        superior = new ATourCentralSuperior();
+        inferior = new ATourCentralinferior();
+
+        setLayout(new BorderLayout());
+        this.add(superior , BorderLayout.NORTH);
+        this.add(inferior, BorderLayout.CENTER);
+
+
+    }
 }
