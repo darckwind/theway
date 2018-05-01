@@ -2,8 +2,11 @@ package UI;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class ISecion extends JDialog {
+
+public class ISecion extends JDialog implements ActionListener {
 
     private int alto = 200;
     private int ancho= 400;
@@ -30,6 +33,7 @@ public class ISecion extends JDialog {
         password = new JTextField();
         inicio = new JButton("Inicio");
         cancelar = new JButton("Cancel");
+        cancelar.addActionListener(this);
 
         /**
          * configuracion layout
@@ -54,5 +58,9 @@ public class ISecion extends JDialog {
         setResizable(false);
         setModal(true);
         setVisible(true);
+
+    }
+    public void actionPerformed(ActionEvent e) {
+        System.exit(0);
     }
 }

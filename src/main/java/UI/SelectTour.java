@@ -50,6 +50,7 @@ public class SelectTour extends JDialog  implements ActionListener{
         setResizable(false);
         setModal(true);
         setVisible(true);
+
     }
 
     public void actionPerformed(ActionEvent e) {
