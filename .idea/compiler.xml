@@ -9,5 +9,8 @@
         <module name="theway" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="theway" target="6" />
+    </bytecodeTargetLevel>
   </component>
 </project>

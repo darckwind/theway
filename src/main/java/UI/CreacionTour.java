@@ -2,8 +2,10 @@ package UI;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class CreacionTour extends JDialog {
+public class CreacionTour extends JDialog implements ActionListener{
     private int alto = 200;
     private int ancho= 400;
     private String titulo = "Configuracion Tour";
@@ -29,6 +31,7 @@ public class CreacionTour extends JDialog {
         duracion = new JLabel("Duracion");
         duracion2 = new JTextField();
         crear = new JButton("Crear");
+        crear.addActionListener(this);
         limpiar = new JButton("Limpiar");
 
         /**
@@ -54,6 +57,19 @@ public class CreacionTour extends JDialog {
         setResizable(false);
         setModal(true);
         setVisible(true);
+
+    }
+    public void actionPerformed(ActionEvent e) {
+        /**
+         * eventos
+         */
+        if(e.getActionCommand()== "Crear"){
+            setVisible(false);
+            ActualizarTour aTour =new ActualizarTour();
+        }else{
+            System.out.println("xupela profe");
+
+        }
 
     }
 
