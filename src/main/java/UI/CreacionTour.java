@@ -67,7 +67,7 @@ public class CreacionTour extends JDialog implements ActionListener{
             setVisible(false);
             ActualizarTour aTour =new ActualizarTour();
         }else{
-            System.out.println("xupela profe");
+            System.out.println("");
 
         }
 
