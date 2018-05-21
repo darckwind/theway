@@ -40,6 +40,8 @@ public class PanelLateral extends JPanel implements ActionListener {
             SelectCliente selectCliente = new SelectCliente();
         }else if(e.getActionCommand()=="Datos Motos"){
             SelectMotos selectMotos = new SelectMotos();
+        }else if (e.getActionCommand()=="Hoteles"){
+            SelectHotel selectHotel = new SelectHotel();
         }
 
 
