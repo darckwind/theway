@@ -47,7 +47,7 @@ public class DatosMotos extends JDialog {
         patente= new JTextField();
 
         panelCentral= new JPanel();
-
+        //cisjaodajslid
         GridLayout grid = new GridLayout(3,4);
         panelCentral.setLayout(grid);
 
