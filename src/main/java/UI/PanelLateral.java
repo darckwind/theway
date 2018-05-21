@@ -20,6 +20,7 @@ public class PanelLateral extends JPanel implements ActionListener {
         tour = new JButton("Tours");
         tour.addActionListener(this);
         datosClientes = new JButton("Datos Clientes");
+        datosClientes.addActionListener(this);
         datosMotos = new JButton("Datos Motos");
         hoteles = new JButton("Hoteles");
         GridLayout grid = new GridLayout(4,1);
@@ -30,6 +31,14 @@ public class PanelLateral extends JPanel implements ActionListener {
         add(hoteles);
     }
     public void actionPerformed(ActionEvent e) {
-        SelectTour selectTour =new SelectTour();
+        System.out.println(e.getActionCommand());
+        if(e.getActionCommand()=="Tours"){
+            SelectTour selectTour =new SelectTour();
+        }else if(e.getActionCommand()=="Datos Clientes"){
+            SelectCliente selectCliente = new SelectCliente();
+        }
+
+
+
     }
 }
