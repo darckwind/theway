@@ -33,7 +33,7 @@ public class PanelLateral extends JPanel implements ActionListener {
         add(hoteles);
     }
     public void actionPerformed(ActionEvent e) {
-        System.out.println(e.getActionCommand());
+
         if(e.getActionCommand()=="Tours"){
             SelectTour selectTour =new SelectTour();
         }else if(e.getActionCommand()=="Datos Clientes"){
