@@ -9,18 +9,39 @@ public class ActualizarCliente extends JDialog {
     private JButton guardar, limpiar;
     private JTextField nombre, apellido,npasaporte, email, modelomoto, patente;
     private JLabel lNombre,lapellido,lNPasaporte,lEmail,lModeloMoto,lPatente,lcliente;
-    private JPanel panelLateralSup,panelLateralInf, panelCentral;
+    private JPanel panelLateralSup,panelLateralInf, panelCentral, panelLateral;
+    private int alto=640;
+    private int ancho=800;
+    private String titulo = "Cliente";
 
 
     public ActualizarCliente() {
+        Orden();
     }
 
     public void Orden(){
+        ConstruirPanelLateral();
+        ConstruirPanelCentral();
+        setLayout(new BorderLayout());
+        add(panelCentral, BorderLayout.CENTER);
+        add(panelLateral, BorderLayout.WEST);
+
+        setModal(true);
+        setTitle(titulo);
+        setSize(ancho, alto);
+        setMinimumSize(getSize());
+        setResizable(false);
+        setVisible(true);
 
     }
 
     public void ConstruirPanelLateral(){
-
+        ConstruirLateralSup();
+        ConstruirLateralInf();
+        panelLateral = new JPanel();
+        panelLateral.setLayout(new BorderLayout());
+        panelLateral.add(panelLateralSup, BorderLayout.NORTH);
+        panelLateral.add(panelLateralInf, BorderLayout.SOUTH);
 
 
     }
