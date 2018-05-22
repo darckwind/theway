@@ -36,4 +36,9 @@ public class ATourCentralSuperior extends JPanel {
         add(hotel2);
     }
 
+    public void Limpiar(){
+        cordenadaSalida2.setText(null);
+        cordenadaLLegada2.setText(null);
+    }
+
 }

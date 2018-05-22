@@ -2,8 +2,10 @@ package UI;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class ActualizarCliente extends JDialog {
+public class ActualizarCliente extends JDialog implements ActionListener {
 
     private JComboBox cliente;
     private JButton guardar, limpiar;
@@ -56,7 +58,9 @@ public class ActualizarCliente extends JDialog {
     }
     public void ConstruirLateralInf(){
         guardar = new JButton("Guardar");
-        limpiar =  new JButton("limpiar");
+        guardar.addActionListener(this);
+        limpiar =  new JButton("Limpiar");
+        limpiar.addActionListener(this);
         panelLateralInf =  new JPanel();
         GridLayout grid = new GridLayout(2,1);
         panelLateralInf.add(guardar);
@@ -92,6 +96,21 @@ public class ActualizarCliente extends JDialog {
         panelCentral.add(modelomoto);
         panelCentral.add(lPatente);
         panelCentral.add(patente);
+
+    }
+    public void actionPerformed(ActionEvent e) {
+
+        if (e.getActionCommand()=="Guardar"){
+            System.out.println("coming soon");
+        }else if (e.getActionCommand()=="Limpiar"){
+            nombre.setText(null);
+            apellido.setText(null);
+            npasaporte.setText(null);
+            email.setText(null);
+            modelomoto.setText(null);
+            patente.setText(null);
+
+        }
 
     }
 }

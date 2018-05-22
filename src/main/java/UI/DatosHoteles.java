@@ -2,8 +2,10 @@ package UI;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class DatosHoteles extends JDialog {
+public class DatosHoteles extends JDialog implements ActionListener {
     private int alto = 340, ancho= 800;
     private String titulo = "Datos Hotel";
     private JButton guardar ,limpiar;
@@ -64,15 +66,28 @@ public class DatosHoteles extends JDialog {
     public void ConstruiInferior(){
 
         guardar =  new JButton("Guardar");
+        guardar.addActionListener(this);
         limpiar =  new JButton("Limpiar");
+        limpiar.addActionListener(this);
 
         GridLayout grid = new GridLayout(1,2);
         panelInferior = new JPanel();
         panelInferior.setLayout(grid);
         panelInferior.add(guardar);
         panelInferior.add(limpiar);
+    }
 
-
+    public void actionPerformed(ActionEvent e) {
+        if (e.getActionCommand()=="Limpiar"){
+            nombre.setText(null);
+            ubicacion.setText(null);
+            single.setText(null);
+            doble.setText(null);
+            suit.setText(null);
+            contacto.setText(null);
+        }else if (e.getActionCommand()=="Guardar"){
+            System.out.println("coming soon");
+        }
     }
 }
 

@@ -20,5 +20,7 @@ public class ATourCentralinferior extends JPanel{
         add(lore);
         add(lore2);
     }
-
+    public void Limiar(){
+        lore2.setText(null);
+    }
 }

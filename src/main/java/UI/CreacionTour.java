@@ -33,6 +33,7 @@ public class CreacionTour extends JDialog implements ActionListener{
         crear = new JButton("Crear");
         crear.addActionListener(this);
         limpiar = new JButton("Limpiar");
+        limpiar.addActionListener(this);
 
         /**
          * configuracion layout
@@ -67,7 +68,8 @@ public class CreacionTour extends JDialog implements ActionListener{
             setVisible(false);
             ActualizarTour aTour =new ActualizarTour();
         }else{
-            System.out.println("");
+            id2.setText(null);
+            duracion2.setText(null);
 
         }
 
