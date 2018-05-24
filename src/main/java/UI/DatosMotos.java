@@ -2,8 +2,10 @@ package UI;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class DatosMotos extends JDialog {
+public class DatosMotos extends JDialog implements ActionListener {
 
     private JLabel lMarca, lModelo, lAno, lNChasis, lNMotor, lPantente;
     private JTextField marca,modelo,nMotor,nChasis,ano,patente;
@@ -69,12 +71,26 @@ public class DatosMotos extends JDialog {
     public void ConstruirInferior(){
 
         guardar= new JButton("Guardar");
+        guardar.addActionListener(this);
         limpiar =  new JButton("Limpiar");
+        limpiar.addActionListener(this);
         panelInferior = new JPanel();
         GridLayout grid =  new GridLayout(1,2);
         panelInferior.setLayout(grid);
         panelInferior.add(guardar);
         panelInferior.add(limpiar);
+    }
+    public void actionPerformed(ActionEvent e) {
+        if (e.getActionCommand()=="Guardar"){
+            System.out.println("Coming Sooon");
+        }else if (e.getActionCommand()=="Limpiar"){
+            marca.setText(null);
+            modelo.setText(null);
+            ano.setText(null);
+            nChasis.setText(null);
+            nMotor.setText(null);
+            patente.setText(null);
+        }
     }
 
 }
