@@ -1,14 +1,18 @@
 package Logica;
 
+import javax.swing.*;
 import java.util.Date;
 
 public class Tour {
     //variable initialization
-    private String nombre,guia;
-    private int duracion;
+    private String nombre,guia,duracion;
+
     private Date inicio;
 
-    public Tour() {
+    public Tour(JTextField id2, JTextField duracion2, JTextField guia2) {
+        this.nombre = id2.getText();
+        this.guia = guia2.getText();
+        this.duracion = duracion2.getText();
     }
 
     public String getNombre() {
@@ -27,11 +31,11 @@ public class Tour {
         this.guia = guia;
     }
 
-    public int getDuracion() {
+    public String getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(int duracion) {
+    public void setDuracion(String duracion) {
         this.duracion = duracion;
     }
 
