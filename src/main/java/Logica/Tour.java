@@ -9,10 +9,11 @@ public class Tour {
 
     private Date inicio;
 
-    public Tour(JTextField id2, JTextField duracion2, JTextField guia2) {
+    public Tour(JTextField id2, JTextField duracion2, JTextField guia2, Date fecha) {
         this.nombre = id2.getText();
         this.guia = guia2.getText();
         this.duracion = duracion2.getText();
+        this.inicio = fecha;
     }
 
     public String getNombre() {

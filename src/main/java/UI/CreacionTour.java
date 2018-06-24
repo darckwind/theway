@@ -1,11 +1,16 @@
 package UI;
 
+import Logica.Info;
 import Logica.Tour;
+import javafx.scene.input.DataFormat;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class CreacionTour extends JDialog implements ActionListener{
     private int alto = 200;
@@ -20,6 +25,9 @@ public class CreacionTour extends JDialog implements ActionListener{
     private Tour tour;
     private JPanel calendar;
     private JComboBox dia, mes,anio;
+    private SimpleDateFormat format1;
+    private Date fecha;
+    private Info info;
 
 
 
@@ -76,10 +84,11 @@ public class CreacionTour extends JDialog implements ActionListener{
 
     }
     public void Calendario(){
+        info =  new Info();
         calendar =  new JPanel();
-        dia = new JComboBox();
-        mes = new JComboBox();
-        anio = new JComboBox();
+        dia = new JComboBox(info.dia);
+        mes = new JComboBox(info.mes);
+        anio = new JComboBox(info.anio);
 
         GridLayout grida = new GridLayout(1,3);
         calendar.setLayout(grida);
@@ -94,13 +103,23 @@ public class CreacionTour extends JDialog implements ActionListener{
         /**
          * eventos
          */
+        format1 = new SimpleDateFormat("yyyy-MM-dd");
+
+
         if(e.getActionCommand()== "Crear"){
-            tour =  new Tour(id2,duracion2,guia2);
+            try {
+                fecha = format1.parse(anio.getSelectedItem()+"-"+mes.getSelectedItem()+"-"+dia.getSelectedItem());
+            } catch (ParseException e1) {
+                e1.printStackTrace();
+            }
+            tour =  new Tour(id2,duracion2,guia2,fecha);
+            info.Dias(duracion2);
             setVisible(false);
             ActualizarTour aTour =new ActualizarTour();
         }else{
             id2.setText(null);
             duracion2.setText(null);
+            guia2.setText(null);
 
         }
 

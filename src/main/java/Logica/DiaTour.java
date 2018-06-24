@@ -1,13 +1,23 @@
 package Logica;
 
+import javax.swing.*;
+
 public class DiaTour {
 
     //variable initialization
     private String cordenadaSalida,cordenadaLLegada,descripcion,hotel;
     private int dia;
 
-    public DiaTour() {
+    public DiaTour(int dia, JTextField cordSalida, JTextField cordLLegada, String nHotel, JTextArea lore) {
+        this.dia = dia;
+        this.cordenadaLLegada=cordLLegada.getText();
+        this.cordenadaSalida= cordSalida.getText();
+        this.hotel= nHotel;
+        this.descripcion= lore.getText();
+
     }
+
+
 
     public String getCordenadaSalida() {
         return cordenadaSalida;

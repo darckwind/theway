@@ -1,5 +1,8 @@
 package UI;
 
+import Logica.DiaTour;
+import Logica.Info;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -17,6 +20,8 @@ public class ActualizarTour extends JDialog implements ActionListener {
     private JTextArea lore2;
     private JButton guardar;
     private JButton limpiar;
+    private DiaTour diaTour;
+    private Info info;
 
 
 
@@ -58,7 +63,8 @@ public class ActualizarTour extends JDialog implements ActionListener {
         panelLateralInf.add(guardar);
         panelLateralInf.add(limpiar);
     }
-    private void ConstruirLaterlSup(){
+    public void ConstruirLaterlSup(){
+
         panelLateralSup = new JPanel();
         dia = new JComboBox();
         dia2 = new JLabel("Dia");
@@ -107,11 +113,23 @@ public class ActualizarTour extends JDialog implements ActionListener {
         panelCentralInf.add(lore);
         panelCentralInf.add(lore2);
     }
+
+    public JComboBox getDia() {
+        return dia;
+    }
+
+    public void setDia(JComboBox dia) {
+        this.dia = dia;
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
 
         if (e.getActionCommand()=="Guardar"){
-            System.out.println("coming soon");
+            String nHotel = (String) hotel2.getSelectedItem();
+            int sDia = (int) dia.getSelectedItem();
+            diaTour  = new DiaTour(sDia,cordenadaSalida2,cordenadaLLegada2,nHotel,lore2);
+            System.out.println(diaTour);
         }else if (e.getActionCommand()=="Limpiar"){
             lore2.setText(null);
             cordenadaSalida2.setText(null);
