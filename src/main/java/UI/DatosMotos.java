@@ -1,5 +1,7 @@
 package UI;
 
+import Logica.Moto;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -13,6 +15,7 @@ public class DatosMotos extends JDialog implements ActionListener {
     private JPanel panelCentral, panelInferior;
     private  int alto = 440, ancho= 800;
     private String titulo = "Datos Motos";
+    private Moto moto;
 
     public DatosMotos() {
         Orden();
@@ -82,7 +85,8 @@ public class DatosMotos extends JDialog implements ActionListener {
     }
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand()=="Guardar"){
-            System.out.println("Coming Sooon");
+            moto =  new Moto(marca,modelo,ano,nChasis,nMotor,patente);
+            System.out.println(moto);
         }else if (e.getActionCommand()=="Limpiar"){
             marca.setText(null);
             modelo.setText(null);

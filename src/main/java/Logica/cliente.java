@@ -1,11 +1,18 @@
 package Logica;
 
-public class cliente {
+import com.sun.deploy.net.HttpResponse;
+
+import javax.swing.*;
+
+public class Cliente {
     //variable initialization
     private String nombre,apellido,identificacion,email,habitacion;
 
-    public cliente() {
-
+    public Cliente(JTextField nombre, JTextField apellido, JTextField npasaporte, JTextField email) {
+        this.nombre = nombre.getText();
+        this.apellido = apellido.getText();
+        this.identificacion = npasaporte.getText();
+        this.email = email.getText();
     }
 
     public String getNombre() {
@@ -57,5 +64,8 @@ public class cliente {
                 ", email='" + email + '\'' +
                 ", habitacion='" + habitacion + '\'' +
                 '}';
+    }
+    public void EnvioCliente(){
+
     }
 }

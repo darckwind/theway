@@ -1,13 +1,20 @@
 package Logica;
 
+import javax.swing.*;
+
 public class Moto {
 
     //variable initialization
     private String marca,modelo,nChasis,nMotor,patente;
     private int ano;
 
-    public Moto(){
-
+    public Moto(JTextField marca,JTextField modelo, JTextField ano, JTextField nChasis,JTextField nMotor,JTextField patente){
+        this.marca = marca.getText();
+        this.modelo = modelo.getText();
+        this.ano = Integer.parseInt(ano.getText());
+        this.nChasis = nChasis.getText();
+        this.nMotor = nMotor.getText();
+        this.patente = patente.getText();
     }
 
     public String getMarca() {

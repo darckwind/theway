@@ -1,5 +1,8 @@
 package UI;
 
+import Logica.Cliente;
+import Logica.DiaTour;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -14,6 +17,7 @@ public class ActualizarCliente extends JDialog implements ActionListener {
     private JPanel panelLateralSup,panelLateralInf, panelCentral, panelLateral;
     private int alto=640;
     private int ancho=800;
+    private Cliente client;
     private String titulo = "Cliente";
 
 
@@ -101,7 +105,8 @@ public class ActualizarCliente extends JDialog implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if (e.getActionCommand()=="Guardar"){
-            System.out.println("coming soon");
+            client =  new Cliente(nombre,apellido,npasaporte,email);
+            System.out.println(client);
         }else if (e.getActionCommand()=="Limpiar"){
             nombre.setText(null);
             apellido.setText(null);

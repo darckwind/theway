@@ -114,21 +114,14 @@ public class ActualizarTour extends JDialog implements ActionListener {
         panelCentralInf.add(lore2);
     }
 
-    public JComboBox getDia() {
-        return dia;
-    }
-
-    public void setDia(JComboBox dia) {
-        this.dia = dia;
-    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
         if (e.getActionCommand()=="Guardar"){
-            String nHotel = (String) hotel2.getSelectedItem();
-            int sDia = (int) dia.getSelectedItem();
-            diaTour  = new DiaTour(sDia,cordenadaSalida2,cordenadaLLegada2,nHotel,lore2);
+
+
+            diaTour  = new DiaTour(cordenadaSalida2,cordenadaLLegada2,lore2);
             System.out.println(diaTour);
         }else if (e.getActionCommand()=="Limpiar"){
             lore2.setText(null);

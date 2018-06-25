@@ -8,11 +8,9 @@ public class DiaTour {
     private String cordenadaSalida,cordenadaLLegada,descripcion,hotel;
     private int dia;
 
-    public DiaTour(int dia, JTextField cordSalida, JTextField cordLLegada, String nHotel, JTextArea lore) {
-        this.dia = dia;
+    public DiaTour( JTextField cordSalida, JTextField cordLLegada, JTextArea lore) {
         this.cordenadaLLegada=cordLLegada.getText();
         this.cordenadaSalida= cordSalida.getText();
-        this.hotel= nHotel;
         this.descripcion= lore.getText();
 
     }
