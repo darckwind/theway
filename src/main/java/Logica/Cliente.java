@@ -1,7 +1,5 @@
 package Logica;
 
-import com.sun.deploy.net.HttpResponse;
-
 import javax.swing.*;
 
 public class Cliente {
