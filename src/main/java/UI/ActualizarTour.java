@@ -74,6 +74,8 @@ public class ActualizarTour extends JDialog implements ActionListener {
         panelLateralSup.add(dia);
     }
 
+
+
     public void CconstruirCentral(){
         ConstrirCentrarInf();
         ConstruirCentralSup();
@@ -115,12 +117,11 @@ public class ActualizarTour extends JDialog implements ActionListener {
     }
 
 
+
     @Override
     public void actionPerformed(ActionEvent e) {
 
         if (e.getActionCommand()=="Guardar"){
-
-
             diaTour  = new DiaTour(cordenadaSalida2,cordenadaLLegada2,lore2);
             System.out.println(diaTour);
         }else if (e.getActionCommand()=="Limpiar"){

@@ -11,11 +11,12 @@ public class Info {
     public String [] diaTour;
     private ActualizarTour actualizarTour;
 
-    public void Dias(JTextField duracion){
-        int duracion2 = Integer.parseInt(duracion.getText());
-        diaTour = new String[duracion2];
-        for (int i = 0; i < duracion2; i++){
-            diaTour[i]=Integer.toString(i+1);
+    public void Dias(int duracion){
+
+        diaTour = new String[duracion];
+        for (int i = 0; i < duracion; i++){
+            this.diaTour[i]=Integer.toString(i+1);
+            System.out.println(diaTour[i]);
         }
     }
 

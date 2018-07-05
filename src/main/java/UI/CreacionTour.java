@@ -2,7 +2,8 @@ package UI;
 
 import Logica.Info;
 import Logica.Tour;
-import javafx.scene.input.DataFormat;
+import Validacion.ValidacionNumero;
+import Validacion.ValidacionTexto;
 
 import javax.swing.*;
 import java.awt.*;
@@ -32,6 +33,8 @@ public class CreacionTour extends JDialog implements ActionListener{
 
 
 
+
+
     public CreacionTour(){
         Oredn();
     }
@@ -44,8 +47,10 @@ public class CreacionTour extends JDialog implements ActionListener{
         Calendario();
         id = new JLabel("Id Tour");
         id2 = new JTextField();
+        id2.setInputVerifier(new ValidacionTexto());
         duracion = new JLabel("Duracion");
         duracion2 = new JTextField();
+        duracion2.setInputVerifier(new ValidacionNumero());
         guia= new JLabel("Guia");
         guia2 = new JTextField();
         fechaInicio = new JLabel("Fecha Inicio");
@@ -99,6 +104,8 @@ public class CreacionTour extends JDialog implements ActionListener{
 
     }
 
+
+
     public void actionPerformed(ActionEvent e) {
         /**
          * eventos
@@ -112,8 +119,7 @@ public class CreacionTour extends JDialog implements ActionListener{
             } catch (ParseException e1) {
                 e1.printStackTrace();
             }
-            tour =  new Tour(id2,duracion2,guia2,fecha);
-            info.Dias(duracion2);
+            info.Dias(Integer.parseInt(duracion2.getText()));
             setVisible(false);
             ActualizarTour aTour =new ActualizarTour();
         }else{
