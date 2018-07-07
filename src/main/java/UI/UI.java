@@ -25,7 +25,7 @@ public class UI extends JFrame {
         pCentral = new PanelCentral();
         pLateral = new PanelLateral();
         setLayout(new BorderLayout());
-        add(pLateral, BorderLayout.WEST);
+        add(pLateral, BorderLayout.NORTH);
         add(pCentral, BorderLayout.CENTER);
 
     }
