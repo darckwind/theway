@@ -2,6 +2,9 @@ package UI;
 
 import Logica.Cliente;
 import Logica.DiaTour;
+import Validacion.ValidacionEmail;
+import Validacion.ValidacionNull;
+import Validacion.ValidacionTexto;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,8 +18,8 @@ public class ActualizarCliente extends JDialog implements ActionListener {
     private JTextField nombre, apellido,npasaporte, email, modelomoto, patente;
     private JLabel lNombre,lapellido,lNPasaporte,lEmail,lModeloMoto,lPatente,lcliente;
     private JPanel panelLateralSup,panelLateralInf, panelCentral, panelLateral;
-    private int alto=640;
-    private int ancho=800;
+    private int alto=240;
+    private int ancho=600;
     private Cliente client;
     private String titulo = "Cliente";
 
@@ -74,19 +77,23 @@ public class ActualizarCliente extends JDialog implements ActionListener {
     public void ConstruirPanelCentral(){
         nombre = new JTextField();
         lNombre= new JLabel("Nombre");
+        nombre.setInputVerifier(new ValidacionTexto());
         apellido =  new JTextField();
         lapellido =  new JLabel("Apelido");
+        apellido.setInputVerifier(new ValidacionTexto());
         npasaporte = new JTextField();
         lNPasaporte =  new JLabel("N° Pasaporte/Rut");
+        npasaporte.setInputVerifier(new ValidacionNull());
         email= new JTextField();
         lEmail =  new JLabel("Email");
+        email.setInputVerifier(new ValidacionEmail());
         modelomoto = new JTextField();
         lModeloMoto = new JLabel("Modelo Moto");
         patente =  new JTextField();
         lPatente = new JLabel("Patente");
 
         panelCentral =  new JPanel();
-        GridLayout grid = new GridLayout(3,4);
+        GridLayout grid = new GridLayout(3,4,5,10);
         panelCentral.setLayout(grid);
         panelCentral.add(lNombre);
         panelCentral.add(nombre);
@@ -105,8 +112,17 @@ public class ActualizarCliente extends JDialog implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if (e.getActionCommand()=="Guardar"){
-            client =  new Cliente(nombre,apellido,npasaporte,email);
-            System.out.println(client);
+            try {
+                if (nombre.getText().isEmpty()||apellido.getText().isEmpty()||npasaporte.getText().isEmpty()||email.getText().isEmpty()||modelomoto.getText().isEmpty()||patente.getText().isEmpty()){
+                    JOptionPane.showMessageDialog(null, "Rellene los campos pertinentes antes de enviar");
+                }else{
+                    client =  new Cliente(nombre,apellido,npasaporte,email);
+                    System.out.println(client);
+                }
+            }catch (NullPointerException de){
+                de.getMessage();
+            }
+
         }else if (e.getActionCommand()=="Limpiar"){
             nombre.setText(null);
             apellido.setText(null);

@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 public class SelectCliente extends JDialog implements ActionListener {
 
-    private int ancho=400;
+    private int ancho=300, alto = 100;
     private String titulo ="Clientes";
     private JButton agregar;
     private JButton actualizar;
@@ -32,7 +32,7 @@ public class SelectCliente extends JDialog implements ActionListener {
          * configuracion layout
          */
 
-        GridLayout grid =new GridLayout(2,4);
+        GridLayout grid =new GridLayout(2,4,5,10);
         setLayout(grid);
         add(cliente);
         add(new JLabel());
@@ -44,7 +44,6 @@ public class SelectCliente extends JDialog implements ActionListener {
          */
 
         setTitle(titulo);
-        int alto = 200;
         setSize(ancho, alto);
         setMinimumSize(getSize());
         setResizable(false);

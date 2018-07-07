@@ -7,12 +7,13 @@ import java.awt.event.ActionListener;
 
 public class SelectTour extends JDialog  implements ActionListener{
 
-    private int alto=200;
-    private int ancho=400;
+    private int alto=100;
+    private int ancho=300;
     private String titulo ="Tour's";
     private JButton agregar;
     private JButton actualizar;
     private JComboBox tour;
+    private JPanel panel;
 
     public SelectTour(){
 
@@ -23,6 +24,7 @@ public class SelectTour extends JDialog  implements ActionListener{
          * inicializacion botones con eventos
          */
 
+        panel = new JPanel(new GridBagLayout());
         tour = new JComboBox();
         actualizar = new JButton("Actualizar");
         actualizar.addActionListener(this);
@@ -33,9 +35,10 @@ public class SelectTour extends JDialog  implements ActionListener{
          * configuracion layout
          */
 
-        GridLayout grid =new GridLayout(2,4);
+        GridLayout grid =new GridLayout(2,4,5,10);
         setLayout(grid);
         add(tour);
+        tour.setPreferredSize(new Dimension(0,20));
         add(new JLabel());
         add(actualizar);
         add(agregar);
