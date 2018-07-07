@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.font.ImageGraphicAttribute;
 
 public class SelectCliente extends JDialog implements ActionListener {
 
@@ -12,6 +13,7 @@ public class SelectCliente extends JDialog implements ActionListener {
     private JButton agregar;
     private JButton actualizar;
     private JComboBox cliente;
+    private ImageIcon imgUpdate,imgAdd;
 
     public SelectCliente() {
         Orden();
@@ -19,13 +21,25 @@ public class SelectCliente extends JDialog implements ActionListener {
 
     public void Orden(){
         /**
+         * Inicializacion Imagenes e iconos
+         */
+        imgAdd =  new ImageIcon("iconos-botones"+System.getProperty("file.separator")+"add.png");
+        imgUpdate = new ImageIcon("iconos-botones"+System.getProperty("file.separator")+"update.png");
+
+        Icon icoAdd = new ImageIcon(this.imgAdd.getImage().getScaledInstance( 20, 20, Image.SCALE_DEFAULT));
+        Icon icoUpdate =  new ImageIcon(this.imgUpdate.getImage().getScaledInstance( 20, 20, Image.SCALE_DEFAULT));
+
+
+        /**
          * inicializacion botones con eventos
          */
 
         cliente = new JComboBox();
         actualizar = new JButton("Actualizar");
+        actualizar.setIcon(icoUpdate);
         actualizar.addActionListener(this);
         agregar = new JButton("agregar");
+        agregar.setIcon(icoAdd);
         agregar.addActionListener(this);
 
         /**

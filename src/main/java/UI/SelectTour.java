@@ -14,6 +14,7 @@ public class SelectTour extends JDialog  implements ActionListener{
     private JButton actualizar;
     private JComboBox tour;
     private JPanel panel;
+    private ImageIcon  imgUpdate, imgAdd;
 
     public SelectTour(){
 
@@ -21,14 +22,28 @@ public class SelectTour extends JDialog  implements ActionListener{
     }
     private void Orden(){
         /**
+         * Inicializacion Imagnes
+         */
+        imgUpdate = new ImageIcon("iconos-botones"+System.getProperty("file.separator")+"update.png");
+        imgAdd =  new ImageIcon("iconos-botones"+System.getProperty("file.separator")+"add.png");
+
+        /**
+         * Inicializacion iconos
+         */
+        Icon icoUpdate =  new ImageIcon(this.imgUpdate.getImage().getScaledInstance( 20, 20, Image.SCALE_DEFAULT));
+        Icon icoAdd = new ImageIcon(this.imgAdd.getImage().getScaledInstance( 20, 20, Image.SCALE_DEFAULT));
+
+        /**
          * inicializacion botones con eventos
          */
 
         panel = new JPanel(new GridBagLayout());
         tour = new JComboBox();
         actualizar = new JButton("Actualizar");
+        actualizar.setIcon(icoUpdate);
         actualizar.addActionListener(this);
         agregar = new JButton("agregar");
+        agregar.setIcon(icoAdd);
         agregar.addActionListener(this);
 
         /**
