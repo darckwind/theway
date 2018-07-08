@@ -17,11 +17,12 @@ public class ValidacionTexto extends InputVerifier {
         try{
             if(matcher.find()){
             }else{
+                JOptionPane.showMessageDialog(null, "El campo solo puede contener texto");
                 throw new Exception("Not a perfect String");
             }
-            System.out.println("funca");
+
         }catch(Exception e){
-            System.out.println(e.toString());
+            JOptionPane.showMessageDialog(null, "el Campo no puede estar vacio");
             return false;
         }
         return true;

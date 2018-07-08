@@ -10,6 +10,7 @@ public class ValidacionNull extends InputVerifier {
 
         try{
             if(test.isEmpty()){
+                JOptionPane.showMessageDialog(null, "el Campo no puede estar vacio");
                 throw new Exception("Not a perfect");
 
             }else{

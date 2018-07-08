@@ -10,10 +10,10 @@ public class ValidacionNumero extends InputVerifier{
         try {
             int duracion = Integer.parseInt(test);
         } catch(NumberFormatException e) {
-            System.out.println("not numero");
+            JOptionPane.showMessageDialog(null, "porfavor ingrese un numero valido");
             return false;
         } catch(NullPointerException e) {
-            System.out.println("vacio");
+            JOptionPane.showMessageDialog(null, "el Campo no puede estar vacio");
             return false;
         }
         return true;

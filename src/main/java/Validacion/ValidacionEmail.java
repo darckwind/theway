@@ -14,6 +14,7 @@ public class ValidacionEmail extends InputVerifier {
         try{
             if(matcher.find()){
             }else{
+                JOptionPane.showMessageDialog(null, "Correo no valido");
                 throw new Exception("Not a perfect Email");
             }
         }catch(Exception j){
