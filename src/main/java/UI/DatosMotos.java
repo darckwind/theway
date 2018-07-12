@@ -13,7 +13,7 @@ public class DatosMotos extends JDialog implements ActionListener {
     private JTextField marca,modelo,nMotor,nChasis,ano,patente;
     private JButton guardar, limpiar;
     private JPanel panelCentral, panelInferior;
-    private  int alto = 440, ancho= 800;
+    private  int alto = 340, ancho= 500;
     private String titulo = "Datos Motos";
     private Moto moto;
 
@@ -52,22 +52,48 @@ public class DatosMotos extends JDialog implements ActionListener {
         patente= new JTextField();
 
         panelCentral= new JPanel();
-        //cisjaodajslid
-        GridLayout grid = new GridLayout(3,4);
+        GridBagLayout grid = new GridBagLayout();
+        GridBagConstraints c = new GridBagConstraints();
         panelCentral.setLayout(grid);
-
-        panelCentral.add(lMarca);
-        panelCentral.add(marca);
-        panelCentral.add(lModelo);
-        panelCentral.add(modelo);
-        panelCentral.add(lAno);
-        panelCentral.add(ano);
-        panelCentral.add(lNChasis);
-        panelCentral.add(nChasis);
-        panelCentral.add(lNMotor);
-        panelCentral.add(nMotor);
-        panelCentral.add(lPantente);
-        panelCentral.add(patente);
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.weightx = 0.5;
+        c.weighty=0.5;
+        c.gridx=0;
+        c.gridy=0;
+        panelCentral.add(lMarca,c);
+        c.gridx=1;
+        c.gridy=0;
+        panelCentral.add(marca,c);
+        c.gridx=0;
+        c.gridy=1;
+        panelCentral.add(lModelo,c);
+        c.gridx=1;
+        c.gridy=1;
+        panelCentral.add(modelo,c);
+        c.gridx=0;
+        c.gridy=2;
+        panelCentral.add(lAno,c);
+        c.gridx=1;
+        c.gridy=2;
+        panelCentral.add(ano,c);
+        c.gridx=0;
+        c.gridy=3;
+        panelCentral.add(lNChasis,c);
+        c.gridx=1;
+        c.gridy=3;
+        panelCentral.add(nChasis,c);
+        c.gridx=0;
+        c.gridy=4;
+        panelCentral.add(lNMotor,c);
+        c.gridx=1;
+        c.gridy=4;
+        panelCentral.add(nMotor,c);
+        c.gridx=0;
+        c.gridy=5;
+        panelCentral.add(lPantente,c);
+        c.gridx=1;
+        c.gridy=5;
+        panelCentral.add(patente,c);
 
     }
 

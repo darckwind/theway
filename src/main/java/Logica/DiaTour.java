@@ -5,17 +5,16 @@ import javax.swing.*;
 public class DiaTour {
 
     //variable initialization
-    private String cordenadaSalida,cordenadaLLegada,descripcion,hotel;
+    private String cordenadaSalida,cordenadaLLegada,descripcion,hotel,idTour;
     private int dia;
 
-    public DiaTour( JTextField cordSalida, JTextField cordLLegada, JTextArea lore) {
-        this.cordenadaLLegada=cordLLegada.getText();
-        this.cordenadaSalida= cordSalida.getText();
-        this.descripcion= lore.getText();
-
+    public DiaTour(JTextField cordenadaSalida2, JTextField cordenadaLLegada2, JTextArea lore2, String idTour, JComboBox dia) {
+        this.cordenadaSalida=cordenadaSalida2.getText();
+        this.cordenadaLLegada = cordenadaLLegada2.getText();
+        this.descripcion =  lore2.getText();
+        this.idTour=idTour;
+        this.dia= (int) dia.getSelectedItem();
     }
-
-
 
     public String getCordenadaSalida() {
         return cordenadaSalida;
@@ -57,6 +56,15 @@ public class DiaTour {
         this.dia = dia;
     }
 
+    public String getIdTour() {
+        return idTour;
+    }
+
+    public void setIdTour(String idTour) {
+        this.idTour = idTour;
+    }
+
+
     @Override
     public String toString() {
         return "DiaTour{" +
@@ -64,6 +72,7 @@ public class DiaTour {
                 ", cordenadaLLegada='" + cordenadaLLegada + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", hotel='" + hotel + '\'' +
+                ", idTour='" + idTour + '\'' +
                 ", dia=" + dia +
                 '}';
     }

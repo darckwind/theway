@@ -75,9 +75,11 @@ public class SelectTour extends JDialog  implements ActionListener{
         /**
          * eventos
          */
+        String id = "lel";
+        int time = 12;
         if(e.getActionCommand()== "Actualizar"){
             setVisible(false);
-            ActualizarTour aTour =new ActualizarTour();
+            ActualizarTour aTour =new ActualizarTour(time,id);
         }else{
             setVisible(false);
             CreacionTour creacion = new CreacionTour();

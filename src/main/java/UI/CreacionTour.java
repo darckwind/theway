@@ -123,9 +123,8 @@ public class CreacionTour extends JDialog implements ActionListener{
                 if (id2.getText().isEmpty()||duracion2.getText().isEmpty()){
 
                 }else{
-                    info.Dias(Integer.parseInt(duracion2.getText()));
+                    ActualizarTour actualizarTour = new ActualizarTour(Integer.parseInt(duracion2.getText()),id2.getText());
                     setVisible(false);
-                    ActualizarTour aTour =new ActualizarTour();
                 }
             }catch (NullPointerException de){
                 de.getMessage();
