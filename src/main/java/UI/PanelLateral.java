@@ -12,6 +12,7 @@ public class PanelLateral extends JPanel implements ActionListener {
     private JButton datosMotos;
     private JButton hoteles;
     private ImageIcon imgTour, imgCliente, imgMoto, imgHotel;
+    private JToolBar toolBar;
 
     public PanelLateral() {
         orden();
@@ -34,6 +35,12 @@ public class PanelLateral extends JPanel implements ActionListener {
         /**inicializacion componentes
          *
          */
+
+        toolBar =  new JToolBar();
+        toolBar.setRollover(true);
+        toolBar.setFloatable(false);
+
+
         tour = new JButton("Tours");
         tour.setIcon(icoTour);
         tour.addActionListener(this);
@@ -46,13 +53,13 @@ public class PanelLateral extends JPanel implements ActionListener {
         hoteles = new JButton("Hoteles");
         hoteles.setIcon(icoHotel);
         hoteles.addActionListener(this);
-        GridLayout grid = new GridLayout(1,4,5,10);
-        setLayout(grid);
-        add(tour);
-        add(datosClientes);
-        add(datosMotos);
-        add(hoteles);
+        toolBar.add(tour);
+        toolBar.add(datosClientes);
+        toolBar.add(datosMotos);
+        toolBar.add(hoteles);
+        toolBar.addSeparator(new Dimension(400, 50));
 
+        add(toolBar, BorderLayout.EAST);
     }
     public void actionPerformed(ActionEvent e) {
 
