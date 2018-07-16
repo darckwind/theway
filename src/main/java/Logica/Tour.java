@@ -1,5 +1,10 @@
 package Logica;
 
+import com.mashape.unirest.http.HttpResponse;
+import com.mashape.unirest.http.JsonNode;
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.http.exceptions.UnirestException;
+
 import javax.swing.*;
 import java.util.Date;
 
@@ -56,5 +61,11 @@ public class Tour {
                 ", duracion=" + duracion +
                 ", inicio=" + inicio +
                 '}';
+    }
+    public void TourPost() throws UnirestException {
+        HttpResponse<JsonNode> jsonResponse = Unirest.post("http://httpbin.org/post")
+                .header("accept", "application/json")
+                .body("{\"parameter\":\"value\", \"foo\":\"bar\"}")
+                .asJson();
     }
 }
