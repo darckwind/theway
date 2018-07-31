@@ -1,5 +1,10 @@
 package Logica;
 
+import com.mashape.unirest.http.HttpResponse;
+import com.mashape.unirest.http.JsonNode;
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.http.exceptions.UnirestException;
+
 import javax.swing.*;
 import java.util.Date;
 
@@ -50,11 +55,14 @@ public class Tour {
 
     @Override
     public String toString() {
-        return "Tour{" +
+        return "{" +
                 "nombre='" + nombre + '\'' +
                 ", guia='" + guia + '\'' +
                 ", duracion=" + duracion +
                 ", inicio=" + inicio +
                 '}';
+
     }
+
+
 }

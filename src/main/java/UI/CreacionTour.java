@@ -4,6 +4,8 @@ import Logica.Info;
 import Logica.Tour;
 import Validacion.ValidacionNumero;
 import Validacion.ValidacionTexto;
+import com.mashape.unirest.http.exceptions.UnirestException;
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -123,7 +125,11 @@ public class CreacionTour extends JDialog implements ActionListener{
                 if (id2.getText().isEmpty()||duracion2.getText().isEmpty()){
 
                 }else{
+                    Tour tour = new Tour(id2,duracion2,guia2,fecha);
+                    System.out.println(tour);
+
                     ActualizarTour actualizarTour = new ActualizarTour(Integer.parseInt(duracion2.getText()),id2.getText());
+
                     setVisible(false);
                 }
             }catch (NullPointerException de){
